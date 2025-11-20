@@ -26,3 +26,41 @@ Then pull a model:
 
 ```bash
 ollama pull llama3
+
+
+*****
+Key Features
+
+1)Fast, local inference
+
+2)100% private — no cloud required
+
+3)Fully Dockerized
+
+4)Browser-based chat UI
+
+5)Easy to extend (e.g., RAG, vector DB, memory, auth)
+
+
+
+Folder Structure
+├── chatbot.py
+├── requirements.txt
+├── Dockerfile
+├── templates/
+│   └── index.html
+└── README.md
+
+
+******Perfect For
+
+Learning how to integrate LLMs with Python
+
+Local AI/ML experimentation
+
+Building your own ChatGPT-like app
+
+Deploying AI tools internally at companies
+
+Showcasing skills in AI + Docker + backend development*****
+
