@@ -1,0 +1,28 @@
+# 🧠 Local Chatbot using Ollama + Flask + Docker
+
+This project demonstrates how to build a **local AI chatbot** using:
+
+- **Ollama** (LLaMA 3 model)
+- **Python Flask backend**
+- **Docker** container
+- **Simple HTML UI**
+
+---
+
+## 🚀 Features
+
+- Runs fully offline
+- Uses Ollama for local LLaMA inference
+- Dockerized for easy deployment
+- Simple web UI
+
+---
+
+## 📦 Installation
+
+### 1. Install Ollama
+Download: https://ollama.com  
+Then pull a model:
+
+```bash
+ollama pull llama3
