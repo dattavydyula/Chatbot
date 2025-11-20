@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Local Chatbot</title>
+  <style>
+    body { font-family: Arial; background: #f4f4f9; margin: 40px; }
+    #chatbox { width: 100%; max-width: 600px; margin: auto; }
+    .message { padding: 10px; margin: 8px 0; border-radius: 10px; }
+    .user { background: #d1e7ff; text-align: right; }
+    .bot { background: #fff; }
+    input { width: 80%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; }
+    button { padding: 10px 15px; border: none; border-radius: 5px; background: #007bff; color: #fff; }
+  </style>
+</head>
+<body>
+  <div id="chatbox">
+    <h2> Local Chatbot (Ollama + Flask)</h2>
+    <div id="chat"></div>
+    <input id="msg" placeholder="Type your message...">
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+  <script>
+  async function sendMessage() {
+    const input = document.getElementById('msg');
+    const chat = document.getElementById('chat');
+    const message = input.value.trim();
+    if (!message) return;
+
+    chat.innerHTML += `<div class='message user'>${message}</div>`;
+    input.value = '';
+
+    const res = await fetch('/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message })
+    });
+
+    const data = await res.json();
+    chat.innerHTML += `<div class='message bot'>${data.reply}</div>`;
+    window.scrollTo(0, document.body.scrollHeight);
+  }
+  </script>
+</body>
+</html>
