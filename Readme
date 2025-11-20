@@ -64,3 +64,21 @@ Deploying AI tools internally at companies
 
 Showcasing skills in AI + Docker + backend development*****
 
+Steps
+-->Open terminal and type 
+git clone https://github.com/yourusername/ollama-flask-chatbot.git (They can also clone it via Git (developers do this)
+-->If run it locally
+docker build -t flask-ollama-chatbot .
+docker run -p 5000:5000 \
+  -v ~/.ollama:/root/.ollama \
+  -v /var/run/ollama:/var/run/ollama \
+  flask-ollama-chatbot
+-->Then Open
+http://localhost:5000
+
+
+
+
+
+
+
